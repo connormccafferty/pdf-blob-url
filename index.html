@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pdf blob url example</title>
+  </head>
+  <body>
+    <p>Version: <span id="of-version"></span></p>
+    <div>
+      <p>object url</p>
+      <iframe id="iframe-object-url" type="application/pdf"></iframe>
+    </div>
+  </body>
+  <script>
+    const pdfURL = "http://localhost:5555/sample.pdf";
+
+    fetch(pdfURL)
+      .then((response) => response.blob())
+      .then(async (blob) => {
+        const blobURL = URL.createObjectURL(blob);
+        const iframe_b = document.getElementById("iframe-object-url");
+
+        iframe_b.src = blobURL;
+      })
+      .catch(console.error);
+
+    if (typeof fin !== "undefined") {
+      const ofVersion = document.querySelector("#of-version");
+      fin.System.getVersion()
+        .then((v) => (ofVersion.textContent = v))
+        .catch((err) => console.log(err));
+    } else {
+      ofVersion.textContent = "You are probably running in a browser.";
+    }
+  </script>
+</html>

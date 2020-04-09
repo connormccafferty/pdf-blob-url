@@ -1,0 +1,15 @@
+{
+  "startup_app": {
+    "name": "pdf-blob-url-example",
+    "uuid": "pdf-blob-url-example",
+    "url": "http://localhost:5555/index.html",
+    "autoShow": true,
+    "defaultHeight": 600,
+    "defaultWidth": 600
+  },
+  "runtime": {
+    "arguments": "",
+    "version": "stable"
+  },
+  "shortcut": {}
+}
